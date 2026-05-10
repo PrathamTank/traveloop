@@ -9,6 +9,117 @@ Traveloop is a modern web application designed to help you plan, manage, and bud
 - **Security**: Full user authentication and private trip storage.
 - **Real-time Dashboard**: Track upcoming trips and metrics at a glance.
 
+## 📂 Project Structure
+
+```text
+travelapp/
+│
+├── backend/                         # Backend server and APIs
+│   │
+│   ├── server.js                    # Main Express server
+│   │
+│   ├── config/                      # Configurations
+│   │   ├── db.js                    # SQLite database connection
+│   │   ├── cloud.js                 # Cloud image storage config
+│   │   └── auth.js                  # JWT/auth config
+│   │
+│   ├── db/                          # Database files
+│   │   ├── traveloop.db             # SQLite database
+│   │   └── schema.sql               # Database schema
+│   │
+│   ├── routes/                      # API routes
+│   │   ├── authRoutes.js
+│   │   ├── tripRoutes.js
+│   │   ├── cityRoutes.js
+│   │   ├── activityRoutes.js
+│   │   ├── budgetRoutes.js
+│   │   ├── packingRoutes.js
+│   │   ├── notesRoutes.js
+│   │   ├── userRoutes.js
+│   │   └── shareRoutes.js
+│   │
+│   ├── controllers/                 # Route logic/controllers
+│   │   ├── authController.js
+│   │   ├── tripController.js
+│   │   ├── cityController.js
+│   │   ├── activityController.js
+│   │   ├── budgetController.js
+│   │   ├── packingController.js
+│   │   ├── notesController.js
+│   │   └── userController.js
+│   │
+│   ├── middleware/                  # Middleware functions
+│   │   ├── authMiddleware.js
+│   │   ├── uploadMiddleware.js
+│   │   └── errorMiddleware.js
+│   │
+│   ├── models/                      # Database models/queries
+│   │   ├── userModel.js
+│   │   ├── tripModel.js
+│   │   ├── activityModel.js
+│   │   └── budgetModel.js
+│   │
+│   ├── uploads/                     # Temporary upload handling only
+│   │
+│   └── utils/                       # Helper functions
+│       ├── budgetCalculator.js
+│       ├── validators.js
+│       └── dateHelpers.js
+│
+├── frontend/                        # Frontend application
+│   │
+│   ├── index.html                   # Main landing page
+│   │
+│   ├── pages/                       # Additional pages
+│   │   ├── login.html
+│   │   ├── signup.html
+│   │   ├── dashboard.html
+│   │   ├── create-trip.html
+│   │   ├── my-trips.html
+│   │   ├── itinerary.html
+│   │   ├── budget.html
+│   │   ├── packing.html
+│   │   ├── profile.html
+│   │   └── notes.html
+│   │
+│   ├── css/                         # Stylesheets
+│   │   ├── style.css
+│   │   ├── auth.css
+│   │   ├── dashboard.css
+│   │   ├── itinerary.css
+│   │   ├── responsive.css
+│   │   └── animations.css
+│   │
+│   ├── js/                          # JavaScript files
+│   │   ├── app.js
+│   │   ├── auth.js
+│   │   ├── dashboard.js
+│   │   ├── itinerary.js
+│   │   ├── budget.js
+│   │   ├── packing.js
+│   │   ├── profile.js
+│   │   ├── notes.js
+│   │   └── api.js
+│   │
+│   ├── assets/                      # Static assets
+│   │   ├── icons/
+│   │   ├── logos/
+│   │   ├── illustrations/
+│   │   └── videos/
+│   │
+│   └── components/                  # Reusable UI components
+│       ├── navbar.html
+│       ├── sidebar.html
+│       ├── footer.html
+│       └── modals.html
+│
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── README.md
+└── node_modules/
+```
+
 ## 🚀 How to Run Locally
 
 If you've just cloned this repository, follow these steps to get started:
