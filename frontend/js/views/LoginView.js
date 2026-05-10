@@ -38,6 +38,9 @@ class LoginView {
                                 `Already have an account? <a href="#login">Log In</a>` : 
                                 `Don't have an account? <a href="#register">Sign Up</a>`
                             }
+                            <div style="margin-top: 16px;">
+                                <a href="#landing" style="color: var(--text-muted);"><i class="ph ph-arrow-left"></i> Back to home</a>
+                            </div>
                         </div>
                     </div>
                 </div>

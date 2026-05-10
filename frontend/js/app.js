@@ -16,22 +16,24 @@ class Router {
         var param = parts[1];
 
         // Auth Check
-        var publicRoutes = ['#login', '#register', '#shared'];
+        var publicRoutes = ['#login', '#register', '#shared', '#landing'];
         var isPublic = false;
         for (var p of publicRoutes) {
             if (path === p) isPublic = true;
         }
 
         if (!isPublic && !localStorage.getItem('traveloop_token')) {
-            window.location.hash = '#login';
+            window.location.hash = '#landing';
             return;
         }
 
         // Sidebar Visibility
-        if (path === '#login' || path === '#register') {
+        if (path === '#login' || path === '#register' || path === '#landing') {
             this.sidebar.style.display = 'none';
+            this.sidebar.classList.add('hidden');
         } else {
             this.sidebar.style.display = 'flex';
+            this.sidebar.classList.remove('hidden');
             this.updateActiveNav(path);
         }
 
@@ -65,6 +67,7 @@ class Router {
     init() {
         window.addEventListener('hashchange', () => this.handleRoute());
         
+        this.addRoute('#landing', window.LandingView);
         this.addRoute('#login', window.LoginView);
         this.addRoute('#register', window.LoginView);
         this.addRoute('#dashboard', window.DashboardView);
@@ -77,12 +80,13 @@ class Router {
         this.addRoute('#shared', window.SharedTripView);
         this.addRoute('#packing', window.PackingView);
         
-        // Handle Logout
-        document.getElementById('logout-btn').addEventListener('click', function() {
-            if (confirm('Are you sure you want to logout?')) {
+        // Handle Logout using delegation
+        document.getElementById('app').addEventListener('click', (e) => {
+            if (e.target.closest('#logout-btn')) {
+                console.log('Logout clicked');
                 localStorage.removeItem('traveloop_token');
                 localStorage.removeItem('traveloop_user');
-                window.location.hash = '#login';
+                window.location.hash = '#landing';
             }
         });
 

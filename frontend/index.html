@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,20 +11,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Phosphor Icons for elegant UI icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
+
     <link rel="stylesheet" href="/css/variables.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <div id="app">
         <!-- Sidebar Navigation (Hidden on Login/Signup by default) -->
-        <nav id="sidebar" class="sidebar hidden">
+        <nav id="sidebar" class="sidebar">
             <div class="sidebar-header">
                 <i class="ph ph-paper-plane-tilt logo-icon"></i>
                 <span class="logo-text">Traveloop</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#dashboard" class="nav-link" id="nav-dashboard"><i class="ph ph-squares-four"></i> Dashboard</a></li>
+                <li><a href="#dashboard" class="nav-link" id="nav-dashboard"><i class="ph ph-squares-four"></i>
+                        Dashboard</a></li>
                 <li><a href="#trips" class="nav-link" id="nav-trips"><i class="ph ph-map-trifold"></i> My Trips</a></li>
                 <li><a href="#explore" class="nav-link" id="nav-explore"><i class="ph ph-compass"></i> Explore</a></li>
                 <li><a href="#budget" class="nav-link" id="nav-budget"><i class="ph ph-wallet"></i> Budget</a></li>
@@ -45,6 +48,7 @@
 
     <!-- Application Logic -->
     <script src="/js/api.js?v=22"></script>
+    <script src="/js/views/LandingView.js?v=22"></script>
     <script src="/js/views/LoginView.js?v=22"></script>
     <script src="/js/views/DashboardView.js?v=22"></script>
     <script src="/js/views/TripListView.js?v=22"></script>
@@ -57,4 +61,5 @@
     <script src="/js/views/PackingView.js?v=22"></script>
     <script src="/js/app.js?v=22"></script>
 </body>
+
 </html>

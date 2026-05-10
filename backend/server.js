@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // Serve static frontend files
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Import Routes
 const authRoutes = require('./routes/auth');
@@ -25,7 +25,7 @@ app.use('/api/uploads', uploadRoutes);
 
 // Fallback for SPA routing - serve index.html for unknown paths (if history API used instead of hash)
 app.get(/(.*)/, (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
+    res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
 // Start Server
